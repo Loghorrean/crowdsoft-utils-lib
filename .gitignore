@@ -1,0 +1,22 @@
+# Jetbrains stuff
+.idea
+
+# You know, what this is
+/node_modules
+
+# Testing
+/coverage
+
+# Some stuff
+.DS_Store
+*.pem
+
+
+# Build files
+/build
+/dist
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
