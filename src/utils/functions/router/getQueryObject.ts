@@ -1,5 +1,6 @@
 import { dropIsoTimezone } from "../date";
-import {isIterable, QueryObject} from "@/src/utils";
+import {QueryObject} from "./buildQuery";
+import {isIterable} from "../common";
 
 export function getQueryObject<T extends QueryObject = object>(query: string): T {
     query = query.replaceAll("%5B", "[").replaceAll("%5D", "]");

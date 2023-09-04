@@ -1,4 +1,4 @@
-import {dropIsoTimezone} from "../date/dropIsoTimezone";
+import {dropIsoTimezone} from "../date";
 
 export type QueryObject = {
     [key: string]: any;

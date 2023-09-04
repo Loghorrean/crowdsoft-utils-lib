@@ -1,5 +1,6 @@
 //Function does not accept objects with functions as fields
-import {isPrimitive} from "@/src/utils";
+
+import {isPrimitive} from "./isPrimitive";
 
 function compareObjects<T extends object>(first: T, second: T): boolean {
     if (Object.keys(first).length !== Object.keys(second).length) {
