@@ -2,7 +2,7 @@
 
 import {isPrimitive} from "./isPrimitive";
 
-function compareObjects<T extends object>(first: T, second: T): boolean {
+export function compareObjects<T extends object>(first: T, second: T): boolean {
     if (Object.keys(first).length !== Object.keys(second).length) {
         return false;
     }
@@ -20,5 +20,3 @@ function compareObjects<T extends object>(first: T, second: T): boolean {
     }
     return true;
 }
-
-export default compareObjects;

@@ -1,4 +1,4 @@
-import dayjs from "dayjs";
+import * as dayjs from "dayjs";
 
 const defaultTimeout = 5000;
 const defaultDelay = 50;

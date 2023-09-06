@@ -1,5 +1,3 @@
-@use "variables" as v;
-
 @mixin centerWithFlex() {
     display: flex;
     justify-content: center;
@@ -41,12 +39,12 @@ $widths: (
 );
 
 //TODO: REWORK TO RANGE SELECTORS
-@mixin media($breakpoint, $width: "max") {
+@mixin media($container-breakpoints, $breakpoint, $width: "max") {
     @if (map-has-key($widths, $width) == false) {
         @error "Please, provide valid width parameter";
     }
-    @if (map-has-key(v.$container-breakpoints, $breakpoint)) {
-        $breakpoint: map-get(v.$container-breakpoints, $breakpoint);
+    @if (map-has-key($container-breakpoints, $breakpoint)) {
+        $breakpoint: map-get($container-breakpoints, $breakpoint);
         @if ($width == "max") {
             $breakpoint: calc($breakpoint - 1px);
         }

@@ -1,6 +1,6 @@
 import {getQueryObject} from "../getQueryObject";
-import compareObjects from "../../common/compareObjects";
-import buildQuery from "../buildQuery";
+import { compareObjects } from "../../common";
+import { buildQuery } from "../buildQuery";
 
 describe("Testing generating object from query", () => {
     test("Basic object", () => {

@@ -1,6 +1,6 @@
 //TODO: MAYBE ADD DEEP MERGE
-import buildQuery from "./buildQuery";
 import {getQueryObject} from "./getQueryObject";
+import { buildQuery } from "./buildQuery";
 
 export const concatenateQueries = (queryString: string, ...other: string[]): string => {
     return buildQuery(

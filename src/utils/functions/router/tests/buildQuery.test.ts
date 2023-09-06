@@ -1,5 +1,5 @@
-import buildQuery from "../buildQuery";
-import encodeCertainURIComponents from "../encodeCertainURIComponents";
+import { buildQuery } from "../buildQuery";
+import { encodeCertainURIComponents } from "../encodeCertainURIComponents";
 
 describe("Testing build query", () => {
     test("Basic object", () => {

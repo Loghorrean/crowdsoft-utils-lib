@@ -1,4 +1,4 @@
-const debounce = (fn: (...args: any) => any, timeout = 350) => {
+export const debounce = (fn: (...args: any) => any, timeout = 350) => {
     let timeoutId: ReturnType<typeof setTimeout>;
     return function (this: any, ...args: any[]) {
         clearTimeout(timeoutId);
@@ -7,5 +7,3 @@ const debounce = (fn: (...args: any) => any, timeout = 350) => {
         }, timeout);
     };
 };
-
-export default debounce;

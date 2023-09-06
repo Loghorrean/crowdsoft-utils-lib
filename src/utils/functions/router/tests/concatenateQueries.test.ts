@@ -1,7 +1,7 @@
 import { describe } from "jest-circus";
-import buildQuery from "../buildQuery";
 import {concatenateQueries} from "../concatenateQueries";
-import encodeCertainURIComponents from "../encodeCertainURIComponents";
+import { buildQuery } from "../buildQuery";
+import { encodeCertainURIComponents } from "../encodeCertainURIComponents";
 
 describe("Testing function to concatenate queries", () => {
     test("Concatenate simple query", () => {

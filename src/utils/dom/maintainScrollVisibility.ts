@@ -1,4 +1,4 @@
-export function maintainScrollVisibility(activeElement: HTMLElement, scrollParent: HTMLElement) {
+export const maintainScrollVisibility = (activeElement: HTMLElement, scrollParent: HTMLElement) => {
     const { offsetHeight, offsetTop } = activeElement;
     const { offsetHeight: parentOffsetHeight, scrollTop } = scrollParent;
 

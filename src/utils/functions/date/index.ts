@@ -1,1 +1,1 @@
-export * from "./dropIsoTimezone";
+export {dropIsoTimezone} from "./dropIsoTimezone";

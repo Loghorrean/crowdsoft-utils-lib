@@ -4,7 +4,7 @@ export type QueryObject = {
     [key: string]: any;
 };
 
-const buildQuery = (data: QueryObject, prefix?: string): string => {
+export const buildQuery = (data: QueryObject, prefix?: string): string => {
     const arr: Array<string> = [];
     if (data instanceof Array) {
         if (!prefix) {
@@ -35,5 +35,3 @@ const buildQuery = (data: QueryObject, prefix?: string): string => {
     }
     return arr.join("&");
 };
-
-export default buildQuery;

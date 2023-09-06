@@ -5,12 +5,10 @@ function escapeChars(uri: string, values: Array<string>): string {
     return uri;
 }
 
-const encodeCertainURIComponents = (uri: string, values: Array<string> | string): string => {
+export const encodeCertainURIComponents = (uri: string, values: Array<string> | string): string => {
     if (typeof values === "string") {
         const newValues = values.split("");
         return escapeChars(uri, newValues);
     }
     return escapeChars(uri, values);
 };
-
-export default encodeCertainURIComponents;

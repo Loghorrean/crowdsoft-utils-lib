@@ -1,4 +1,4 @@
-import encodeCertainURIComponents from "../encodeCertainURIComponents";
+import { encodeCertainURIComponents } from "../encodeCertainURIComponents";
 
 describe("Testing encoding certain uri strings", () => {
     test("Test basic string", () => {
