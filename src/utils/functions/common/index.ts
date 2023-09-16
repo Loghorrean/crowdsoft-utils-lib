@@ -9,4 +9,5 @@ export {isPrimitive} from "./isPrimitive";
 export {invariant} from "./invariant";
 export {resultIf} from "./resultIf";
 export {sleep} from "./sleep";
+export * from "./strings";
 export {throttle} from "./throttle";
