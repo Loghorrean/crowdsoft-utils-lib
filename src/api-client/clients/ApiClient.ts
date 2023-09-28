@@ -10,20 +10,40 @@ export class ApiClient implements ApiClientInterface {
         private readonly authToken: string = ""
     ) {}
 
-    public async get(endpoint = "", params?: object, signal?: AbortSignal): Promise<any> {
+    public async get(endpoint = "", params?: object): Promise<any> {
         try {
             const client = this.createClient(params);
-            const response = await client.get(endpoint, { signal });
+            const response = await client.get(endpoint);
             return response.data;
         } catch (error: any) {
             this.handleError(error);
         }
     }
 
-    public async post(endpoint = "", data?: object, signal?: AbortSignal): Promise<any> {
+    public async post(endpoint = "", data?: object): Promise<any> {
         try {
             const client = this.createClient();
-            const response = await client.post(endpoint, data, { signal });
+            const response = await client.post(endpoint, data);
+            return response.data;
+        } catch (error) {
+            this.handleError(error);
+        }
+    }
+
+    public async put(endpoint = "", data?: object): Promise<any> {
+        try {
+            const client = this.createClient();
+            const response = await client.put(endpoint, data);
+            return response.data;
+        } catch (error) {
+            this.handleError(error);
+        }
+    }
+
+    public async delete(endpoint = ""): Promise<any> {
+        try {
+            const client = this.createClient();
+            const response = await client.delete(endpoint);
             return response.data;
         } catch (error) {
             this.handleError(error);
