@@ -1,7 +1,8 @@
-import axios, { AxiosInstance, AxiosRequestConfig } from "axios";
+import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponseHeaders } from "axios";
 import { ApiClientInterface } from "./ApiClientInterface";
 import { HttpHeaders } from "../../utils";
 import { Forbidden, HttpError, PropertyError, Unauthorized, ValidationError } from "../../models";
+import { RawAxiosResponseHeaders } from "axios/index";
 
 export class ApiClient implements ApiClientInterface {
     constructor(
@@ -10,21 +11,27 @@ export class ApiClient implements ApiClientInterface {
         private readonly authToken: string = ""
     ) {}
 
-    public async get(endpoint = "", params?: object): Promise<any> {
+    public async get<T>(endpoint = "", params?: object): Promise<{ data: T, headers: RawAxiosResponseHeaders | AxiosResponseHeaders }> {
         try {
             const client = this.createClient(params);
             const response = await client.get(endpoint);
-            return response.data;
+            return {
+                data: response.data,
+                headers: response.headers
+            };
         } catch (error: any) {
             this.handleError(error);
         }
     }
 
-    public async post(endpoint = "", data?: object): Promise<any> {
+    public async post<T>(endpoint = "", data?: object): Promise<{ data: T, headers: RawAxiosResponseHeaders | AxiosResponseHeaders }> {
         try {
             const client = this.createClient();
             const response = await client.post(endpoint, data);
-            return response.data;
+            return {
+                data: response.data,
+                headers: response.headers
+            };
         } catch (error) {
             this.handleError(error);
         }
