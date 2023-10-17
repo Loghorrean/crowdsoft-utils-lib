@@ -1,12 +1,13 @@
 {
   "name": "crowdsoft-utils-lib",
-  "version": "1.1.14",
+  "version": "1.1.16",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "jest",
-    "build": "tsc && cpx \"src/**/*.scss\" \"dist/\""
+    "build": "tsc && cpx \"src/**/*.scss\" \"dist/\"",
+    "prepublish": "yarn run build"
   },
   "files": [
     "/dist"
