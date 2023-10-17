@@ -45,9 +45,9 @@ $widths: (
     }
     @if (map-has-key($container-breakpoints, $breakpoint)) {
         $breakpoint: map-get($container-breakpoints, $breakpoint);
-        @if ($width == "max") {
-            $breakpoint: calc($breakpoint - 1px);
-        }
+        //@if ($width == "max") {
+        //    $breakpoint: calc($breakpoint - 1px);
+        //}
         @media screen and (#{$width + "-width"}: $breakpoint) {
             @content;
         }
