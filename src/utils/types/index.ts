@@ -6,4 +6,5 @@ export * from "./PartialBy";
 export * from "./PartialObject";
 export * from "./RequiredWith";
 export * from "./Shift";
+export * from "./Unpacked";
 export * from "./ValidationErrors";

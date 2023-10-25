@@ -1,8 +1,7 @@
-import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponseHeaders } from "axios";
+import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponseHeaders, RawAxiosResponseHeaders } from "axios";
 import { ApiClientInterface } from "./ApiClientInterface";
 import { HttpHeaders } from "../../utils";
 import { Forbidden, HttpError, PropertyError, Unauthorized, ValidationError } from "../../models";
-import { RawAxiosResponseHeaders } from "axios/index";
 
 export class ApiClient implements ApiClientInterface {
     constructor(
@@ -72,13 +71,14 @@ export class ApiClient implements ApiClientInterface {
     }
 
     private createClient(params: object = {}): AxiosInstance {
-        const config: AxiosRequestConfig<any> = {
+        const config: AxiosRequestConfig = {
             baseURL: this.baseUrl,
-            headers: { ...this.headers, "Content-Type": "application/json" },
+            headers: { ...this.headers, "Content-Type": "application/json", Authorization: "" },
             params: params,
         };
         if (this.authToken) {
             config.headers = {
+                ...config.headers,
                 Authorization: `Bearer ${this.authToken}`,
             };
         }
