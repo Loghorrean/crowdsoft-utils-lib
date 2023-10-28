@@ -16,7 +16,7 @@ export class ApiClient implements ApiClientInterface {
             const response = await client.get(endpoint);
             return {
                 data: response.data,
-                headers: response.headers
+                headers: response.headers,
             };
         } catch (error: any) {
             this.handleError(error);
@@ -29,18 +29,21 @@ export class ApiClient implements ApiClientInterface {
             const response = await client.post(endpoint, data);
             return {
                 data: response.data,
-                headers: response.headers
+                headers: response.headers,
             };
         } catch (error) {
             this.handleError(error);
         }
     }
 
-    public async put(endpoint = "", data?: object): Promise<any> {
+    public async put<T>(endpoint = "", data?: object): Promise<{ data: T, headers: RawAxiosResponseHeaders | AxiosResponseHeaders }> {
         try {
             const client = this.createClient();
             const response = await client.put(endpoint, data);
-            return response.data;
+            return {
+                data: response.data,
+                headers: response.headers,
+            };
         } catch (error) {
             this.handleError(error);
         }
